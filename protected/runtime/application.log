@@ -1,0 +1,1242 @@
+2017/12/08 17:07:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/sign_in".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('users/sign_in')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/users/sign_in
+HTTP_REFERER=http://bookone.ru/users/sign_in
+---
+2017/12/08 21:11:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "feed".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('feed')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/feed/
+HTTP_REFERER=shoptxt.ru
+---
+2017/12/08 23:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1141042)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		.
+2017/12/08 23:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1141042)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): Book->getBookList(0, 12, '1141042', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/book/332921/makyavelli-hans-frayer
+---
+2017/12/09 00:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1155046, 1139700, 1140546, 1143505, 1143504, 1143506, 1143508, 1143511, 1140544, 1143509, 1143510, 1140543, 1140552, 1140547, 1143501, 1140553, 1140551, 1140542, 1143500, 1143497, 1140554, 1143502, 1143498, 1143503, 1143499, 1143496, 1140550, 1140545, 1140548, 1140388, 1139707, 1139701, 1140439, 1140456, 1140454, 1140455, 1140457, 1140440, 1140443, 1140441, 1140444, 1140438, 1140461, 1140481, 1140465, 1140466, 1142513, 1140480, 1140469, 1142515, 1140464, 1140477, 1140463, 1142518, 1142519, 1142520, 1140473, 1140476, 1140482, 1140472, 1140475, 1142516, 1140478, 1140462, 1140479, 1140467, 1140474, 1142514, 1140468, 1142517, 1140470, 1140471, 1140459, 1140460, 1140530, 1140537, 1140535, 1140504, 1140532, 1140503, 1140534, 1140526, 1140527, 1140511, 1140505, 1140519, 1140524, 1140538, 1140531, 1140529, 1140508, 1140541, 1140490, 1140533, 1140525, 1140540, 1140536, 1140510, 1140516, 1140528, 1140539, 1140489, 1140492, 1140494, 1140502, 1140496, 1140497, 1140498, 1140493, 1140495, 1140500, 1140499, 1140442, 1140453, 1140450, 1140449, 1140452, 1140451)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 11268, 36
+		.
+2017/12/09 00:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1155046, 1139700, 1140546, 1143505, 1143504, 1143506, 1143508, 1143511, 1140544, 1143509, 1143510, 1140543, 1140552, 1140547, 1143501, 1140553, 1140551, 1140542, 1143500, 1143497, 1140554, 1143502, 1143498, 1143503, 1143499, 1143496, 1140550, 1140545, 1140548, 1140388, 1139707, 1139701, 1140439, 1140456, 1140454, 1140455, 1140457, 1140440, 1140443, 1140441, 1140444, 1140438, 1140461, 1140481, 1140465, 1140466, 1142513, 1140480, 1140469, 1142515, 1140464, 1140477, 1140463, 1142518, 1142519, 1142520, 1140473, 1140476, 1140482, 1140472, 1140475, 1142516, 1140478, 1140462, 1140479, 1140467, 1140474, 1142514, 1140468, 1142517, 1140470, 1140471, 1140459, 1140460, 1140530, 1140537, 1140535, 1140504, 1140532, 1140503, 1140534, 1140526, 1140527, 1140511, 1140505, 1140519, 1140524, 1140538, 1140531, 1140529, 1140508, 1140541, 1140490, 1140533, 1140525, 1140540, 1140536, 1140510, 1140516, 1140528, 1140539, 1140489, 1140492, 1140494, 1140502, 1140496, 1140497, 1140498, 1140493, 1140495, 1140500, 1140499, 1140442, 1140453, 1140450, 1140449, 1140452, 1140451)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 11268, 36
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/CategoryController.php(260): Book->getBookList(11268, 36, '1155046', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CategoryController->actionList()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('list')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('category/list')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/category/pedagogam/page/314
+---
+2017/12/09 18:19:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('ads.txt')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2017/12/09 19:56:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-login.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-login.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-login.php
+HTTP_REFERER=http://bookone.ru/wp-login.php
+---
+2017/12/10 00:15:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "334147".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('334147')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('334147')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/334147')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/book/334147/
+HTTP_REFERER=http://bookone.ru/book/334147/smert-prihodila-v-ponedelnik-avtobiografiya-cheloveka-stavshego-zhertvoy-presledovaniy-za-otkaz-sluzhit-v-nacistskoy-armii-horst-shmidt
+---
+2017/12/10 00:15:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "334147".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('334147')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('334147')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/334147')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/book/334147/
+HTTP_REFERER=http://bookone.ru/book/334147/smert-prihodila-v-ponedelnik-avtobiografiya-cheloveka-stavshego-zhertvoy-presledovaniy-za-otkaz-sluzhit-v-nacistskoy-armii-horst-shmidt
+---
+2017/12/10 01:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/10 01:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/301772/lekcii-po-ftiziopulmonologii-v-yu-mishin-a-k-strelis-v-i-chukanov-v-a-stahanov-yu-g-grigorev
+HTTP_REFERER=http://bookone.ru/book/301772/lekcii-po-ftiziopulmonologii-v-yu-mishin-a-k-strelis-v-i-chukanov-v-a-stahanov-yu-g-grigorev
+---
+2017/12/10 01:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/10 01:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/301738/osnovy-koloproktologii-pod-redakciey-g-i-vorobeva
+HTTP_REFERER=http://bookone.ru/book/301738/osnovy-koloproktologii-pod-redakciey-g-i-vorobeva
+---
+2017/12/10 01:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/10 01:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/208472/ofisnyy-dnevnik-devushki-po-vyzovu-bel-de-zhur
+---
+2017/12/10 05:51:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin
+---
+2017/12/10 05:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('ads.txt')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2017/12/10 07:28:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "rss.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('rss.xml')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/rss.xml
+---
+2017/12/10 08:21:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "administrator/index.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('administrator/i...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/administrator/index.php
+---
+2017/12/10 08:21:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/robots.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/robots.txt')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog/robots.txt
+---
+2017/12/10 08:21:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/administrator/index.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/administra...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog/administrator/index.php
+---
+2017/12/10 08:21:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "joomla/robots.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('joomla/robots.t...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/joomla/robots.txt
+---
+2017/12/10 08:21:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "joomla/administrator/index.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('joomla/administ...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/joomla/administrator/index.php
+---
+2017/12/10 10:32:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "1310".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('1310')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('1310')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/1310')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/book/1310/
+HTTP_REFERER=http://bookone.ru/book/1310/enciklopediya-akvarium-ryby-rasteniya-oborudovanie-akvariuma
+---
+2017/12/10 17:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/10 17:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/313445/osnovy-vospitaniya-uchebnoe-posobie-i-z-glikman
+---
+2017/12/10 19:42:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "535649".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('535649')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('535649')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/535649')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/book/535649/
+HTTP_REFERER=http://bookone.ru/book/535649/vospitanie-bez-nytya-ili-kak-sdelat-vashih-detey-poslushnymi-lora-markhem
+---
+2017/12/10 22:59:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-login.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-login.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-login.php
+---
+2017/12/10 23:30:12 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1137824, 1155129, 1155128, 1155127, 1155126)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 4032, 36
+		.
+2017/12/10 23:30:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1137824, 1155129, 1155128, 1155127, 1155126)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 4032, 36
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/CategoryController.php(260): Book->getBookList(4032, 36, '1137824', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CategoryController->actionList()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('list')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('category/list')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/category/literatura-po-programme/page/113
+---
+2017/12/11 00:35:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-includes/wlw...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-includes/wlwmanifest.xml
+---
+2017/12/11 00:35:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "xmlrpc.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlrpc.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/xmlrpc.php?rsd
+---
+2017/12/11 00:35:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/wp-include...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog/wp-includes/wlwmanifest.xml
+---
+2017/12/11 00:35:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wordpress/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wordpress/wp-in...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wordpress/wp-includes/wlwmanifest.xml
+---
+2017/12/11 00:35:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp/wp-includes/...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp/wp-includes/wlwmanifest.xml
+---
+2017/12/11 00:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "wp-includes".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('wp-includes')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('wp-includes')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('site/wp-include...')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/wp-includes/wlwmanifest.xml
+---
+2017/12/11 00:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cms/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('cms/wp-includes...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms/wp-includes/wlwmanifest.xml
+---
+2017/12/11 00:49:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "/blog".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('/blog')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=//blog/
+HTTP_REFERER=http://bookone.ru/
+---
+2017/12/11 01:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1139607)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		.
+2017/12/11 01:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1139607)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): Book->getBookList(0, 12, '1139607', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/book/12915/veselyy-akvagrim-25-master-klassov-brayan-i-nik-volfe
+---
+2017/12/11 01:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1140392)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		.
+2017/12/11 01:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1140392)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): Book->getBookList(0, 12, '1140392', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/book/283848/igrushki
+---
+2017/12/11 01:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/11 01:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/215035/pravilnyy-biznes-liderstvo-sostoyanie-potoka-i-sozdanie-smysla-chiksentmihayi-mihay
+---
+2017/12/11 02:55:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('ads.txt')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2017/12/11 03:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/11 03:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/289121/zimnie-uprazhneniya-4-klass-rabochaya-tetrad-l-a-grebenkova
+---
+2017/12/11 06:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1141651)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		.
+2017/12/11 06:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1141651)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): Book->getBookList(0, 12, '1141651', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/book/402826/tolko-odnazhdy-dzhill-mari-lendis
+---
+2017/12/11 10:30:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "313790".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('313790')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('313790')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/313790')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/book/313790/
+HTTP_REFERER=http://bookone.ru/book/313790/
+---
+2017/12/11 11:16:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-includes/wlw...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-includes/wlwmanifest.xml
+---
+2017/12/11 11:16:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "xmlrpc.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('xmlrpc.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/xmlrpc.php?rsd
+---
+2017/12/11 11:16:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "blog/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('blog/wp-include...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/blog/wp-includes/wlwmanifest.xml
+---
+2017/12/11 11:16:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wordpress/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wordpress/wp-in...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wordpress/wp-includes/wlwmanifest.xml
+---
+2017/12/11 11:16:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp/wp-includes/...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp/wp-includes/wlwmanifest.xml
+---
+2017/12/11 11:16:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "wp-includes".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('wp-includes')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('wp-includes')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('site/wp-include...')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/site/wp-includes/wlwmanifest.xml
+---
+2017/12/11 11:16:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cms/wp-includes/wlwmanifest.xml".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('cms/wp-includes...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms/wp-includes/wlwmanifest.xml
+---
+2017/12/11 13:10:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-login.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-login.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-login.php
+---
+2017/12/11 16:07:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CategoryController.php:337
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CategoryController.php(245): CategoryController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CategoryController->actionList()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('list')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('category/list')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/category/%23
+---
+2017/12/11 22:44:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('ads.txt')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2017/12/12 02:41:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ads.txt".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('ads.txt')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/ads.txt
+---
+2017/12/12 03:22:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "wp-login.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('wp-login.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/wp-login.php
+---
+2017/12/12 04:52:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "administrator/components/com_joomlaupdate/restore.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('administrator/c...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/administrator/components/com_joomlaupdate/restore.php?task=stepRestore&factory
+---
+2017/12/12 05:30:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0).
+2017/12/12 05:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: SELECT `category_book`.`id` AS `t1_c0`, `category_book`.`category_id` AS `t1_c1`, `category_book`.`book_id` AS `t1_c2` FROM `category_book` `category_book`  WHERE (`category_book`.`book_id`=:ypl0)' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(808): CDbCommand->queryAll()
+#2 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(509): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /home/u160739/bookoneru/framework/db/ar/CActiveFinder.php(163): CJoinElement->lazyFind(Object(Book))
+#4 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(281): CActiveFinder->lazyFind(Object(Book))
+#5 /home/u160739/bookoneru/framework/db/ar/CActiveRecord.php(143): CActiveRecord->getRelated('category_book')
+#6 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): CActiveRecord->__get('category_book')
+#7 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#8 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#15 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#17 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#18 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/book/518101/hello-kitty-moya-stilnaya-knizhka
+---
+2017/12/12 08:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1139697, 1139703, 1140393, 1140411, 1140394, 1140412, 1140403, 1140402, 1140389, 1140410, 1140392, 1140404, 1140401, 1140405, 1140406, 1140407, 1140408, 1140399, 1140400, 1152048, 1140409, 1139706, 1139715, 1139712, 1139717, 1139714, 1139716, 1139720, 1139721, 1139722, 1139723, 1139719, 1139718, 1139713, 1155046, 1139700, 1140546, 1143505, 1143504, 1143506, 1143508, 1143511, 1140544, 1143509, 1143510, 1140543, 1140552, 1140547, 1143501, 1140553, 1140551, 1140542, 1143500, 1143497, 1140554, 1143502, 1143498, 1143503, 1143499, 1143496, 1140550, 1140545, 1140548, 1140388, 1139707, 1139701, 1140439, 1140456, 1140454, 1140455, 1140457, 1140440, 1140443, 1140441, 1140444, 1140438, 1140461, 1140481, 1140465, 1140466, 1142513, 1140480, 1140469, 1142515, 1140464, 1140477, 1140463, 1142518, 1142519, 1142520, 1140473, 1140476, 1140482, 1140472, 1140475, 1142516, 1140478, 1140462, 1140479, 1140467, 1140474, 1142514, 1140468, 1142517, 1140470, 1140471, 1140459, 1140460, 1140530, 1140537, 1140535, 1140504, 1140532, 1140503, 1140534, 1140526, 1140527, 1140511, 1140505, 1140519, 1140524, 1140538, 1140531, 1140529, 1140508, 1140541, 1140490, 1140533, 1140525, 1140540, 1140536, 1140510, 1140516, 1140528, 1140539, 1140489, 1140492, 1140494, 1140502, 1140496, 1140497, 1140498, 1140493, 1140495, 1140500, 1140499, 1140442, 1140453, 1140450, 1140449, 1140452, 1140451, 1139698, 1140575, 1140678, 1140680, 1140684, 1140688, 1140687, 1140689, 1140686, 1140685, 1140674, 1140712, 1140714, 1140713, 1140710, 1140711, 1140715, 1140709, 1140716, 1140675, 1140707, 1140706, 1140708, 1140705, 1140682, 1140676, 1140697, 1140696, 1140694, 1140701, 1140698, 1140703, 1140695, 1140704, 1140699, 1140702, 1140700, 1140681, 1140683, 1140677, 1140679, 1140691, 1140690, 1140693, 1140692, 1140576, 1140642, 1140634, 1140672, 1140670, 1140673, 1140671, 1140640, 1140638, 1140643, 1140645, 1140652, 1140644, 1140649, 1140654, 1140646, 1140650, 1140653, 1140651, 1140647, 1140648, 1140641, 1140639, 1140635, 1140660, 1140668, 1140667, 1140669, 1140665, 1140661, 1140664, 1140666, 1140662, 1140663, 1140636, 1140658, 1140655, 1140656, 1140657, 1140659, 1140637, 1140574, 1140723, 1140720, 1140721, 1140429, 1140727, 1140730, 1140729, 1140728, 1140719, 1140717, 1140794, 1140786, 1140788, 1140801, 1140799, 1140800, 1140796, 1140795, 1140787, 1140797, 1140790, 1140793, 1140792, 1140791, 1140789, 1140785, 1140798, 1140718, 1140725, 1140724, 1140726, 1140736, 1140739, 1140784, 1140748, 1140740, 1140779, 1140742, 1140741, 1140747, 1140743, 1140744, 1140738, 1140731, 1140782, 1140781, 1140783, 1140732, 1140773, 1140780, 1140774, 1140768, 1140777, 1140776, 1140770, 1140771, 1140772, 1140775, 1140778, 1140769, 1140734, 1140759, 1140745, 1140762, 1140760, 1140746, 1140761, 1140737, 1140733, 1140764, 1140766, 1140767, 1140763, 1140765, 1140735, 1140753, 1140749, 1140756, 1140750, 1140758, 1140755, 1140751, 1140752, 1140754, 1140757, 1140722, 1140572, 1140573, 1140577, 1140580, 1140588, 1140587, 1140581, 1140614, 1140618, 1140615, 1140619, 1140613, 1140620, 1140616, 1140622, 1140621, 1140617, 1140582, 1140592, 1140595, 1140597, 1140596, 1140599, 1140608, 1140605, 1140610, 1140612, 1140607, 1140604, 1140609, 1140611, 1140603, 1140606, 1140600, 1140598, 1140602, 1140601, 1140594, 1140593, 1140578, 1140624, 1140626, 1140623, 1140632, 1140631, 1140633, 1140628, 1140625, 1140627, 1140437, 1140630, 1140629, 1140585, 1140584, 1140590, 1140589, 1140430, 1140591, 1140423, 1140586, 1140579, 1140583, 1139704, 1139735, 1139881, 1139879, 1139874, 1140231, 1169430, 1142450, 1155028, 1139872, 1139912, 1140232, 1144454, 1139907, 1139871, 1139928, 1139880, 1139884, 1140306, 1140304, 1140307, 1140305, 1140311, 1139885, 1139888, 1139886, 1139887, 1139883, 1139902, 1139876, 1139870, 1139878, 1139866, 1139904, 1139903, 1139882, 1140309, 1140310, 1140308, 1139873, 1139875, 1139899, 1139893, 1139877, 1139869, 1139891, 1139897, 1139970, 1140056, 1172684, 1172871, 1140023, 1172872, 1140026, 1140057, 1140058, 1140059, 1140061, 1140060, 1140022, 1140024, 1140563, 1139733, 1140001, 1140010, 1140006, 1140051, 1140003, 1140020, 1140004, 1162481, 1140000, 1140016, 1140127, 1140116, 1140045, 1139995, 1140011, 1140002, 1140005, 1140050, 1140013, 1140007, 1139999, 1140012, 1139973, 1139984, 1139986, 1139985, 1139974, 1140008, 1140014, 1162919, 1140017, 1140009, 1140015)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 55044, 36
+		.
+2017/12/12 08:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1139697, 1139703, 1140393, 1140411, 1140394, 1140412, 1140403, 1140402, 1140389, 1140410, 1140392, 1140404, 1140401, 1140405, 1140406, 1140407, 1140408, 1140399, 1140400, 1152048, 1140409, 1139706, 1139715, 1139712, 1139717, 1139714, 1139716, 1139720, 1139721, 1139722, 1139723, 1139719, 1139718, 1139713, 1155046, 1139700, 1140546, 1143505, 1143504, 1143506, 1143508, 1143511, 1140544, 1143509, 1143510, 1140543, 1140552, 1140547, 1143501, 1140553, 1140551, 1140542, 1143500, 1143497, 1140554, 1143502, 1143498, 1143503, 1143499, 1143496, 1140550, 1140545, 1140548, 1140388, 1139707, 1139701, 1140439, 1140456, 1140454, 1140455, 1140457, 1140440, 1140443, 1140441, 1140444, 1140438, 1140461, 1140481, 1140465, 1140466, 1142513, 1140480, 1140469, 1142515, 1140464, 1140477, 1140463, 1142518, 1142519, 1142520, 1140473, 1140476, 1140482, 1140472, 1140475, 1142516, 1140478, 1140462, 1140479, 1140467, 1140474, 1142514, 1140468, 1142517, 1140470, 1140471, 1140459, 1140460, 1140530, 1140537, 1140535, 1140504, 1140532, 1140503, 1140534, 1140526, 1140527, 1140511, 1140505, 1140519, 1140524, 1140538, 1140531, 1140529, 1140508, 1140541, 1140490, 1140533, 1140525, 1140540, 1140536, 1140510, 1140516, 1140528, 1140539, 1140489, 1140492, 1140494, 1140502, 1140496, 1140497, 1140498, 1140493, 1140495, 1140500, 1140499, 1140442, 1140453, 1140450, 1140449, 1140452, 1140451, 1139698, 1140575, 1140678, 1140680, 1140684, 1140688, 1140687, 1140689, 1140686, 1140685, 1140674, 1140712, 1140714, 1140713, 1140710, 1140711, 1140715, 1140709, 1140716, 1140675, 1140707, 1140706, 1140708, 1140705, 1140682, 1140676, 1140697, 1140696, 1140694, 1140701, 1140698, 1140703, 1140695, 1140704, 1140699, 1140702, 1140700, 1140681, 1140683, 1140677, 1140679, 1140691, 1140690, 1140693, 1140692, 1140576, 1140642, 1140634, 1140672, 1140670, 1140673, 1140671, 1140640, 1140638, 1140643, 1140645, 1140652, 1140644, 1140649, 1140654, 1140646, 1140650, 1140653, 1140651, 1140647, 1140648, 1140641, 1140639, 1140635, 1140660, 1140668, 1140667, 1140669, 1140665, 1140661, 1140664, 1140666, 1140662, 1140663, 1140636, 1140658, 1140655, 1140656, 1140657, 1140659, 1140637, 1140574, 1140723, 1140720, 1140721, 1140429, 1140727, 1140730, 1140729, 1140728, 1140719, 1140717, 1140794, 1140786, 1140788, 1140801, 1140799, 1140800, 1140796, 1140795, 1140787, 1140797, 1140790, 1140793, 1140792, 1140791, 1140789, 1140785, 1140798, 1140718, 1140725, 1140724, 1140726, 1140736, 1140739, 1140784, 1140748, 1140740, 1140779, 1140742, 1140741, 1140747, 1140743, 1140744, 1140738, 1140731, 1140782, 1140781, 1140783, 1140732, 1140773, 1140780, 1140774, 1140768, 1140777, 1140776, 1140770, 1140771, 1140772, 1140775, 1140778, 1140769, 1140734, 1140759, 1140745, 1140762, 1140760, 1140746, 1140761, 1140737, 1140733, 1140764, 1140766, 1140767, 1140763, 1140765, 1140735, 1140753, 1140749, 1140756, 1140750, 1140758, 1140755, 1140751, 1140752, 1140754, 1140757, 1140722, 1140572, 1140573, 1140577, 1140580, 1140588, 1140587, 1140581, 1140614, 1140618, 1140615, 1140619, 1140613, 1140620, 1140616, 1140622, 1140621, 1140617, 1140582, 1140592, 1140595, 1140597, 1140596, 1140599, 1140608, 1140605, 1140610, 1140612, 1140607, 1140604, 1140609, 1140611, 1140603, 1140606, 1140600, 1140598, 1140602, 1140601, 1140594, 1140593, 1140578, 1140624, 1140626, 1140623, 1140632, 1140631, 1140633, 1140628, 1140625, 1140627, 1140437, 1140630, 1140629, 1140585, 1140584, 1140590, 1140589, 1140430, 1140591, 1140423, 1140586, 1140579, 1140583, 1139704, 1139735, 1139881, 1139879, 1139874, 1140231, 1169430, 1142450, 1155028, 1139872, 1139912, 1140232, 1144454, 1139907, 1139871, 1139928, 1139880, 1139884, 1140306, 1140304, 1140307, 1140305, 1140311, 1139885, 1139888, 1139886, 1139887, 1139883, 1139902, 1139876, 1139870, 1139878, 1139866, 1139904, 1139903, 1139882, 1140309, 1140310, 1140308, 1139873, 1139875, 1139899, 1139893, 1139877, 1139869, 1139891, 1139897, 1139970, 1140056, 1172684, 1172871, 1140023, 1172872, 1140026, 1140057, 1140058, 1140059, 1140061, 1140060, 1140022, 1140024, 1140563, 1139733, 1140001, 1140010, 1140006, 1140051, 1140003, 1140020, 1140004, 1162481, 1140000, 1140016, 1140127, 1140116, 1140045, 1139995, 1140011, 1140002, 1140005, 1140050, 1140013, 1140007, 1139999, 1140012, 1139973, 1139984, 1139986, 1139985, 1139974, 1140008, 1140014, 1162919, 1140017, 1140009, 1140015)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 55044, 36
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/CategoryController.php(260): Book->getBookList(55044, 36, '1139697', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CategoryController->actionList()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('list')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('category/list')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/category/uchebnaya-literatura/page/1530
+---
+2017/12/12 09:35:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "online/list".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('online/list')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/online/list
+---
+2017/12/12 09:35:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "online/list".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('online/list')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/online/list
+---
+2017/12/12 10:07:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "205924".' in /home/u160739/bookoneru/framework/web/CController.php:483
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(270): CController->missingAction('205924')
+#1 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('205924')
+#2 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/205924')
+#3 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/book/205924/
+HTTP_REFERER=http://bookone.ru/book/205924/listaya-vechnye-stranicy-pisateli-mira-o-knige-chtenii-bibliofilstve
+---
+2017/12/12 10:33:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CompanyController.php:184
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CompanyController.php(50): CompanyController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CompanyController->actionView()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('company/view')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/moskva/shop/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+HTTP_REFERER=http://bookone.ru/library/index
+---
+2017/12/12 10:33:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CompanyController.php:184
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CompanyController.php(50): CompanyController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CompanyController->actionView()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('company/view')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/moskva/shop/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+---
+2017/12/12 10:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CompanyController.php:184
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CompanyController.php(50): CompanyController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CompanyController->actionView()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('company/view')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/moskva/shop/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+HTTP_REFERER=http://bookone.ru/library/index
+---
+2017/12/12 10:33:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CompanyController.php:184
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CompanyController.php(50): CompanyController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CompanyController->actionView()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('company/view')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/moskva/shop/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+---
+2017/12/12 10:34:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CompanyController.php:184
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CompanyController.php(50): CompanyController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CompanyController->actionView()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('company/view')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/moskva/shop/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+HTTP_REFERER=http://bookone.ru/library/index
+---
+2017/12/12 10:34:35 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /home/u160739/bookoneru/framework/web/CController.php:336
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('library/view')
+#10 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/moskva/library/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+HTTP_REFERER=http://bookone.ru/library/index
+---
+2017/12/12 10:34:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /home/u160739/bookoneru/framework/web/CController.php:336
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('library/view')
+#10 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/moskva/library/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+HTTP_REFERER=http://bookone.ru/library/index
+---
+2017/12/12 10:34:58 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /home/u160739/bookoneru/framework/web/CController.php:336
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('library/view')
+#10 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/moskva/library/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+---
+2017/12/12 10:37:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /home/u160739/bookoneru/framework/web/CController.php:336
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('library/view')
+#10 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#12 {main}
+REQUEST_URI=/moskva/library/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+---
+2017/12/12 11:13:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "online/list".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('online/list')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/online/list
+---
+2017/12/12 12:06:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "manager".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('manager')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/manager
+HTTP_REFERER=http://bookone.ru/manager
+---
+2017/12/12 12:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('admin')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin
+HTTP_REFERER=http://bookone.ru/admin
+---
+2017/12/12 12:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "mscms".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('mscms')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/mscms/
+HTTP_REFERER=http://bookone.ru/mscms/
+---
+2017/12/12 12:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "administrator".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('administrator')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/administrator
+HTTP_REFERER=http://bookone.ru/administrator
+---
+2017/12/12 12:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/login.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/login.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin/login.php
+HTTP_REFERER=http://bookone.ru/admin/login.php
+---
+2017/12/12 12:06:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "netcat".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('netcat')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/netcat/
+HTTP_REFERER=http://bookone.ru/netcat/
+---
+2017/12/12 12:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cms/admin".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('cms/admin')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms/admin/
+HTTP_REFERER=http://bookone.ru/cms/admin/
+---
+2017/12/12 12:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "cms".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('cms')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/cms/
+HTTP_REFERER=http://bookone.ru/cms/
+---
+2017/12/12 12:06:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "users/sign_in".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('users/sign_in')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/users/sign_in
+HTTP_REFERER=http://bookone.ru/users/sign_in
+---
+2017/12/12 12:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "administrator.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('administrator.p...')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/administrator.php
+HTTP_REFERER=http://bookone.ru/administrator.php
+---
+2017/12/12 12:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "adminzone".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('adminzone')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/adminzone
+HTTP_REFERER=http://bookone.ru/adminzone
+---
+2017/12/12 12:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin.php".' in /home/u160739/bookoneru/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('admin.php')
+#1 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/admin.php
+HTTP_REFERER=http://bookone.ru/admin.php
+---
+2017/12/12 12:30:12 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1153610)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		.
+2017/12/12 12:30:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select distinct book.*, (book.baseprice - book.price)/book.baseprice as diff
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1153610)
+			
+			order by is_bestseller DESC, instr(count_reviews, 'отз') DESC, count_reviews DESC, mark_reviews DESC, diff DESC,  book.id ASC
+			limit 0, 12
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(382): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/BookController.php(346): Book->getBookList(0, 12, '1153610', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionView()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/view')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/book/188343/evita-the-real-life-of-eva-peron-reissue-n-fraser
+---
+2017/12/12 13:06:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /home/u160739/bookoneru/www/protected/controllers/CompanyController.php:192
+Stack trace:
+#0 /home/u160739/bookoneru/www/protected/controllers/CompanyController.php(50): CompanyController->loadModelUrl()
+#1 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CompanyController->actionView()
+#2 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#9 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('company/view')
+#12 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/moskva/shop/6114-biblioteka-92-fond-vzrosloy-literatury-kulturnyy-centr-k-i-chukovskogo
+---
+2017/12/12 13:30:13 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select count(distinct book.id) as total_count
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1138165)
+			
+		.
+2017/12/12 13:30:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query. The SQL statement executed was: 
+			select count(distinct book.id) as total_count
+			from book, category_book
+			where book.id = category_book.book_id
+			and category_book.category_id in (1138165)
+			
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Book.php(410): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/CategoryController.php(266): Book->getBookListCount('1138165', NULL, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): CategoryController->actionList()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('list')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('category/list')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/category/stroitelnye-materialy
+---
+2017/12/12 13:55:11 [error] [system.db.CDbCommand] CDbCommand::() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by date_create DESC
+			limit 0, 10' at line 4. The SQL statement executed was: 
+			select distinct review.*
+			from review
+			where book_id = 
+			order by date_create DESC
+			limit 0, 10
+		.
+2017/12/12 13:55:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by date_create DESC
+			limit 0, 10' at line 4. The SQL statement executed was: 
+			select distinct review.*
+			from review
+			where book_id = 
+			order by date_create DESC
+			limit 0, 10
+		' in /home/u160739/bookoneru/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /home/u160739/bookoneru/framework/db/CDbCommand.php(377): CDbCommand->queryInternal('', 0, Array)
+#1 /home/u160739/bookoneru/www/protected/models/Review.php(80): CDbCommand->query()
+#2 /home/u160739/bookoneru/www/protected/controllers/BookController.php(267): Review->getList(0, 10, NULL)
+#3 /home/u160739/bookoneru/framework/web/actions/CInlineAction.php(49): BookController->actionAjaxreviewupdate()
+#4 /home/u160739/bookoneru/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /home/u160739/bookoneru/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /home/u160739/bookoneru/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /home/u160739/bookoneru/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /home/u160739/bookoneru/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /home/u160739/bookoneru/framework/web/CController.php(291): CFilterChain->run()
+#11 /home/u160739/bookoneru/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/u160739/bookoneru/framework/web/CWebApplication.php(282): CController->run('ajaxreviewupdat...')
+#13 /home/u160739/bookoneru/framework/web/CWebApplication.php(141): CWebApplication->runController('book/ajaxreview...')
+#14 /home/u160739/bookoneru/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /home/u160739/bookoneru/www/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/book/ajaxreviewupdate/
+---

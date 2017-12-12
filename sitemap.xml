@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/bestseller.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/biznes.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/hud.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/nehud.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/detyam.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/ucheb.xml</loc>
+	</sitemap>
+	<sitemap>
+		<loc>http://bookone.ru/sitemap/inostr.xml</loc>
+	</sitemap>
+</sitemapindex>

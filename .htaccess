@@ -1,0 +1,35 @@
+#AuthType Basic
+#AuthName 'admin'
+#AuthUserFile /home/u160739/bookoneru/www/.htpasswd
+#Require valid-user
+
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+AddDefaultCharset utf-8
+AddCharset utf-8 *
+<IfModule mod_charset.c>
+    CharsetSourceEnc utf-8
+    CharsetDefault utf-8
+</IfModule>
+
+# redirect on start
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.bookone.ru
+RewriteRule (.*) http://bookone.ru/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ http://bookone.ru/ [R=301,L]
+
+php_flag display_errors off
+php_value error_reporting 0
+
+RewriteCond $1 !^(robots\.txt)

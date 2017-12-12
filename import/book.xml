@@ -1,0 +1,19 @@
+      <offer id="31009576" type="book" available="true" group_id="31009576">
+        <url>http://www.ozon.ru/context/detail/id/31009576/?from=prt_xml_facet</url>
+        <price>360</price>
+        <baseprice>360</baseprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>1137665</categoryId>
+        <picture>http://static.ozone.ru/multimedia/books_covers/1004778078.jpg</picture>
+        <delivery>true</delivery>
+        <orderingTime>
+          <ordering>На складе</ordering>
+        </orderingTime>
+        <name>Девичьи гадания</name>
+        <year>2001</year>
+        <ISBN>5-18-000107-2</ISBN>
+        <language>Русский</language>
+        <page_extent>224</page_extent>
+        <age>18+</age>
+        <barcode>9785180001078</barcode>
+      </offer>

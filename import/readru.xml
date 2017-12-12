@@ -1,0 +1,20 @@
+      <offer id="3969425" type="book" available="true">
+        <url>http://read.ru/id/3969425/</url>
+        <price>114</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>4149</categoryId>
+        <picture>http://img.read.ru/covers_rr/s/25/94/3969425.jpg</picture>
+        <store>false</store>
+        <pickup>true</pickup>
+        <delivery>true</delivery>
+        <local_delivery_cost>199</local_delivery_cost>
+        <author>Александр Афанасьев</author>
+        <name>Сила присутствия</name>
+        <publisher>Эксмо</publisher>
+        <series>Спецназ. Группа Антитеррор (мяг)</series>
+        <year>2015</year>
+        <ISBN>978-5-699-77688-7</ISBN>
+        <page_extent>384</page_extent>
+        <description>Авторитет Российской Федерации в исламском мире год от года растет. Для усиления влияния в Пакистане российские инженеры приступают к проектированию и строительству крупнейшей в стране гидроэлектростанции. Правительство США обеспокоено сложившейся ситуацией. Главе ЦРУ приказано свести на нет активность русских в Южной Азии. Американские силовики организуют теракт в отеле, в котором проходят переговоры российской и пакистанской сторон. Десятки человек погибают, выжившие делегаты взяты в заложники. Из Москвы в Исламабад срочно вылетает спецгруппа полковника Куракина. Бойцам приказано освободить пленников и уничтожить террористов...</description>
+        <downloadable>false</downloadable>
+      </offer>
