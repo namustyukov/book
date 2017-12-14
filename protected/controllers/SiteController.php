@@ -308,6 +308,42 @@ class SiteController extends Controller
 		));
 	}
 
+	public function actionGorod()
+	{
+		$shops = Company::model()->findAll(array(
+			'condition' => 'city_id = :city_id',
+			'params' => array(
+				':city_id' => $this->city->id,
+			),
+			'order' => 'rating ASC',
+		));
+
+		$libs = Library::model()->findAll(array(
+			'condition' => 'city_id = :city_id',
+			'params' => array(
+				':city_id' => $this->city->id,
+			),
+			'order' => 'rating ASC',
+		));
+
+		$shopOnline = ShopOnline::model()->findAll(array(
+			'order' => 'rating ASC',
+		));
+
+		$categories = Category::model()->findAll(array('condition' => 'parent_id is NULL', 'order' => 'name ASC'));
+
+		$this->pageTitle = "BOOKONE.RU - крупнейший каталог книг с описанием, отзывами и рыночной стоимостью";
+		$this->meta_k = "книга, найти книгу, книга бестселлер, магазин книг, лучшие книги ".date('Y').", новинки книг ".date('Y')."";
+		$this->meta_d = "BOOKONE.RU - это удобный инструмент поиска книги в каталоге из 550 тыс. изданий, среди которых печатные издания, аудиокниги, электронные книги.";
+
+		$this->render('gorod',array(
+			'shops' => $shops,
+			'libs' => $libs,
+			'shopOnline' => $shopOnline,
+			'categories' => $categories,
+		));
+	}
+
 	/**
 	 * Displays the login page
 	 */
