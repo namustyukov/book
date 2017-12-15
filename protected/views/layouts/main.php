@@ -53,9 +53,11 @@
 			<div class="top-menu-in">
 				<ul>
 					<li><a href="/">Главная</a></li>
-					<li><a href="/category/kinoromany">Бестселлеры</a></li>
-					<li><a href="/category/iskusstvo-kultura">Новинки</a></li>
-					<li><a href="/category/predprinimatelstvo-otraslevoy-biznes">Акции</a></li>
+					<li><a href="/city/list">Города</a></li>
+					<li><a href="/<?= $this->city->simbol_name ?>"><?= $this->city->gorod ?></a></li>
+					<li><a href="/<?= $this->city->simbol_name ?>/shop/list">Книжные магазины</a></li>
+					<li><a href="/<?= $this->city->simbol_name ?>/library/list">Библиотеки</a></li>
+					<li><a href="/<?= $this->city->simbol_name ?>/online/list">Книжные онлайн магазины</a></li>
 				</ul>
 			</div>
 		</div>

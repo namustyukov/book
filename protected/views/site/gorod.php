@@ -46,7 +46,7 @@
 					В городе <?= $this->city->gorod ?> найдено <?= count($shops) ?> книжных магазинов и <?= count($libs) ?> библиотек. Каждому магазину присвоен рейтинг согласно отзывам покупателей, ассортименту книг и наличию доступной информации. Так же представлен рейтинг <?= count($shopOnline) ?>-и крупнейших книжных интернет-магазинов с доставкой в город <?= $this->city->gorod ?>.
 				</p>
 			</div>
-			<div class="shop-list">
+			<div class="gorod-shop-list">
 				<h3>Книжные магазины</h3>
 				<div class="product-online-list">
 				<?php foreach ($shops as $key => $row) { ?>
@@ -67,8 +67,11 @@
 					}
 				?>
 				</div>
+				<div class="gorod-shop-list-link">
+					<a href="/<?= $this->city->simbol_name ?>/shop/list">Все книжные магазины</a>
+				</div>
 			</div>
-			<div class="shop-list">
+			<div class="gorod-shop-list">
 				<h3>Библиотеки</h3>
 				<div class="product-online-list">
 				<?php foreach ($libs as $key => $row) { ?>
@@ -89,8 +92,11 @@
 					}
 				?>
 				</div>
+				<div class="gorod-shop-list-link">
+					<a href="/<?= $this->city->simbol_name ?>/library/list">Все библиотеки</a>
+				</div>
 			</div>
-			<div class="shop-list">
+			<div class="gorod-shop-list">
 				<h3>Online магазины книг с доставкой в город <?=$this->city->gorod?></h3>
 				<div class="product-online-list">
 				<?php foreach ($shopOnline as $key => $online) { ?>
@@ -110,6 +116,9 @@
 						if ($key >= 5) break;
 					}
 				?>
+				</div>
+				<div class="gorod-shop-list-link">
+					<a href="/<?= $this->city->simbol_name ?>/online/list">Все интернет-магазины</a>
 				</div>
 			</div>
 		</div>

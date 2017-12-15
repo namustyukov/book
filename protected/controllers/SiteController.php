@@ -332,9 +332,9 @@ class SiteController extends Controller
 
 		$categories = Category::model()->findAll(array('condition' => 'parent_id is NULL', 'order' => 'name ASC'));
 
-		$this->pageTitle = "BOOKONE.RU - крупнейший каталог книг с описанием, отзывами и рыночной стоимостью";
-		$this->meta_k = "книга, найти книгу, книга бестселлер, магазин книг, лучшие книги ".date('Y').", новинки книг ".date('Y')."";
-		$this->meta_d = "BOOKONE.RU - это удобный инструмент поиска книги в каталоге из 550 тыс. изданий, среди которых печатные издания, аудиокниги, электронные книги.";
+		$this->pageTitle = "Купить книгу в городе {$this->city->gorod}";
+		$this->meta_k = "книга, {$this->city->gorod}, книжные магазины {$this->city->gorod}, интернет-магазины {$this->city->gorod}, библиотеки {$this->city->gorod}";
+		$this->meta_d = "Книжные магазины и библиотеки в городе {$this->city->gorod}";
 
 		$this->render('gorod',array(
 			'shops' => $shops,

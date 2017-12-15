@@ -21,7 +21,8 @@ $this->menu=array(
 	<div class="breadcrumbs">
 		<ul>
 			<li><a href="/">Главная</a></li>
-			<li><a href="/<?= $this->city->simbol_name ?>/library/list">Библиотеки в городе <?= $this->city->gorod ?></a></li>
+			<li><a href="/<?= $this->city->simbol_name ?>"><?= $this->city->gorod ?></a></li>
+			<li><a href="/<?= $this->city->simbol_name ?>/library/list">Библиотеки</a></li>
 			<li><?= $model->name ?></li>
 		</ul>
 	</div>

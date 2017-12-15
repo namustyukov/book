@@ -55,10 +55,16 @@ class CityController extends Controller
 			Yii::app()->session['city'] = $city->id;
 			Yii::app()->request->cookies['city'] = new CHttpCookie('city', $city->id);
 
-			return $url;
+			if (!preg_match('/(bookone\.ru\/category)|(bookone\.ru\/book)/i', $url)) {
+				$url = "http://bookone.ru/{$city->simbol_name}";
+			}
+
+			echo $url;
 		} else {
-			return $url;
+			echo $url;
 		}
+
+		Yii::app()->end();
 	}
 
 	public function actionAjaxheaderlist()
