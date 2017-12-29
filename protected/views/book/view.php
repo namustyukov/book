@@ -76,6 +76,22 @@ $this->menu=array(
 					<div class="product-view-buy">
 						<span class="link-to-market" data-type="ozon">Оформить покупку в OZON.RU</span>
 					</div>
+					<div class="product-view-compare">
+						<div class="product-view-compare-title">
+							<h4>Где купить в городе <?=$this->city->gorod?></h4>
+						</div>
+						<ul>
+							<li class="__shop">
+								<a target="_blank" href="/<?= $this->city->simbol_name ?>/shop/list">Розничные магазины</a>
+							</li>
+							<li class="__library">
+								<a target="_blank" href="/<?= $this->city->simbol_name ?>/library/list">Библиотеки</a>
+							</li>
+							<li class="__online">
+								<a target="_blank" href="/<?= $this->city->simbol_name ?>/online/list">Интернет-магазины</a>
+							</li>
+						</ul>
+					</div>
 					<div class="product-view-param">
 						<h4>Основные характеристики</h4>
 						<ul>
