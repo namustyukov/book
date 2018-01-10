@@ -299,9 +299,9 @@ class SiteController extends Controller
 					$row->url = CWord::str2url($row->name.($row->author ? '-'.$row->author : ''));
 			}
 		}
-		$this->pageTitle = "BOOKONE.RU - крупнейший каталог книг с описанием, отзывами и рыночной стоимостью";
+		$this->pageTitle = "BOOKONE.RU - крупнейший каталог книг и книжных магазинов";
 		$this->meta_k = "книга, найти книгу, книга бестселлер, магазин книг, лучшие книги ".date('Y').", новинки книг ".date('Y')."";
-		$this->meta_d = "BOOKONE.RU - это удобный инструмент поиска книги в каталоге из 550 тыс. изданий, среди которых печатные издания, аудиокниги, электронные книги.";
+		$this->meta_d = "BOOKONE.RU - это удобный инструмент поиска книги в вашем городе";
 		$this->render('index',array(
 			'books' => $books,
 			'category_text' => $category_text,

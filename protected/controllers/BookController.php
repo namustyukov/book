@@ -360,9 +360,9 @@ class BookController extends Controller
 			'order' => 'rating ASC'
 		));
 
-		$this->pageTitle = "Книга ".$teg_name." ".($model->author ? $model->author : "")." - содержание и отзывы о книге, заказать в интернет-магазине";
-		$this->meta_k = "".mb_strtolower($teg_name, 'UTF-8')." книга, ".mb_strtolower($teg_name, 'UTF-8')." отзывы, купить книгу ".mb_strtolower($teg_name, 'UTF-8')."";
-		$this->meta_d = "".$teg_name." ".($model->author ? "- ".$model->author."" : "")." - аннотация книги, отзывы и рецензии читателей, способы купить книгу.";
+		$this->pageTitle = $teg_name." ".($model->author ? $model->author : "")." - содержание и отзывы книги, места продаж";
+		// $this->meta_k = "".mb_strtolower($teg_name, 'UTF-8')." книга, ".mb_strtolower($teg_name, 'UTF-8')." отзывы, купить книгу ".mb_strtolower($teg_name, 'UTF-8')."";
+		$this->meta_d = "".$teg_name." ".($model->author ? "- ".$model->author."" : "")." - аннотация книги, отзывы и рецензии читателей, а так же способы купить книгу в вашем городе.";
 		
 		$this->render('view',array(
 			'model' => $model,

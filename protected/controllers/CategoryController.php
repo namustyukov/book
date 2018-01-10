@@ -286,7 +286,7 @@ class CategoryController extends Controller
 
 		$this->pageTitle = "Книги из каталога ".$teg_name." | ".$total_count." книг".($page == 1 ? '' : ' | Страница '.$page);
 		$this->meta_k = mb_strtolower($teg_name, 'UTF-8').", литературный жанр, сборник книг, лучшие книги ".date('Y')."".($page == 1 ? "" : ", страница ".$page);
-		$this->meta_d = "Найдено ".$total_count." книг в каталоге ".$teg_name.", содержат бестселлеры, новинки ".date('Y')." и классику.".($page == 1 ? '' : ' | Страница '.$page);
+		$this->meta_d = "Найдено ".$total_count." книг в каталоге ".$teg_name.".".($page == 1 ? '' : ' | Страница '.$page);
 
 		$this->render('list', array(
 			'books' => $books,
